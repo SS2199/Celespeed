@@ -1,0 +1,35 @@
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <title>Ionic Template</title>
+
+  <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+  <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+</head>
+
+<body ng-controller="MyCtrl as ctrl">
+  <ion-header-bar class="bar-stable">
+      <h1 class="title">User Provider Details</h1>
+  </ion-header-bar>
+  <ion-content>
+
+    
+      <div class="row header">
+        <div class="col"> Name</div>
+        <div class="col">Pickup</div>
+        <div class="col">Drop</div>
+        <div class="col">Weight</div>
+        <div class="col">Phone</div>
+      </div>
+      <div class="row"  *ngFor="let bookevent of BookEvent" >
+        <div class="col">{{bookevent.name}}</div>
+        <div class="col">{{ bookevent.pickup}}</div>
+        <div class="col">{{ bookevent.hdrop}}</div>
+        <div class="col">{{bookevent.weight}}</div>
+        <div class="col">{{bookevent.phone}}</div>
+        
+      </div>
+  </ion-content>
+</body>

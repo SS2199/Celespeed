@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons>
+      <ion-back-button defaultHref="/active" color="danger"></ion-back-button>
+    <ion-title>Booking</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <div class="main_content_div">
+    
+    <div class="user_div">
+      <div class="first_div">
+        
+      </div>
+      <h1><b>Booking Details</b></h1>
+      <div class="user_back" [style.backgroundImage]="'url(assets/bookings.jfif)'"></div>
+    </div>
+  <div class="content_div">
+<ion-label class="hello_lbl"> Booking Events</ion-label>
+<ion-list lines="full">
+  <form [formGroup]="bookeventForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating"> Name</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Pickup</ion-label>
+      <ion-input formControlName="pickup" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Drop</ion-label>
+      <ion-input formControlName="hdrop" type="text" required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Weight</ion-label>
+      <ion-input formControlName="weight" type="text" required>
+      </ion-input>
+    </ion-item>
+    
+
+    <ion-item>
+      <ion-label position="floating">Phone</ion-label>
+      <ion-input formControlName="phone" type="text" required>
+      </ion-input>
+    </ion-item>
+  
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" expand="block" href="/payment">Book Now</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-list>
+
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="6"(click)="goToSubject()" *ngFor="let item of subjects">
+      
+      
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  </div>
+  </div>
+  
+</ion-content>
+

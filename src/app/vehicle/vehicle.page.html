@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons>
+      <ion-back-button defaultHref="/active" color="danger"></ion-back-button>
+    <ion-title>Booking</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <div class="main_content_div">
+
+    <div class="user_div">
+      <div class="first_div">
+        <ion-label class="welcome">Celespeed </ion-label>
+        <ion-label class="username">Truck Price</ion-label>
+      </div>
+
+    </div>
+  <div class="content_div">
+<ion-label class="hello_lbl"> </ion-label>
+<ion-grid fixed>
+  
+</ion-grid>
+  </div>
+  </div>
+
+  <ion-card *ngFor="let booktrips of BookTrips" >
+
+    <ion-card-header id="img"><img [src]="booktrips.imgurl || '' "></ion-card-header>
+<center>
+    <ion-card-subtitle>
+      <p>Model:{{booktrips.name}}</p>
+      <p>wheeler:{{booktrips.wheel}}</p>
+      <p>capacity:{{booktrips.capacity}}</p>
+     
+    </ion-card-subtitle>
+  </center>
+    <ion-card-content>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="8">
+          <ion-label color="dark" id="price">
+            <b>{{ booktrips.price | currency:'₹' }}</b>
+           
+          </ion-label>
+        </ion-col>
+
+       
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <center><ion-button href="{{url}}" color="success">
+    <ion-icon name="logo-whatsapp"></ion-icon>
+    <p>Contact Us</p>
+  </ion-button>
+  </center>
+</ion-content>
+

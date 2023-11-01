@@ -1,0 +1,30 @@
+<ion-app>
+  <ion-menu side="start" menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="../assets/avatar.png"alt="">
+        <ion-label>
+          <h2>Celespeed</h2>
+          <p>Goods Transporting</p>
+        </ion-label>
+      </div>
+      
+      <ion-list lines="none">
+        <ion-list>
+          <ion-item fill="" color="praimary" (click)="goToHome()">Home</ion-item>
+        
+          <ion-item fill="" color="praimary" (click)="goToAbout()">About</ion-item>
+          
+          <ion-item fill="" color="praimary" href="/help">Help Center</ion-item>
+        </ion-list>
+      </ion-list>
+    </ion-content>
+    
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+
+ 
+</ion-app>
+ 

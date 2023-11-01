@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons>
+    <ion-back-button defaultHref="/tabs/tab2" style=color:white></ion-back-button>
+    <ion-title>Book List</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-img src="./assets/users.png"></ion-img>
+
+<ion-content>
+  
+  <ion-searchbar type="text" class="form-control" placeholder="Search..."
+                                              [(ngModel)]="filterTerm" ></ion-searchbar>
+
+
+  <ion-list>
+    
+    <ion-item *ngFor="let bookevent of BookEvent  | filter: filterTerm">
+      
+      <ion-label>
+        <h2>{{bookevent.sno}}</h2>
+        <h3>{{bookevent.name}}</h3>
+        <h3>{{bookevent.pickup}}</h3>
+        <h3>{{bookevent.hdrop}}</h3>
+        <h3>{{bookevent.weight}}</h3>
+        <h3>{{bookevent.phone}}</h3>
+        </ion-label>
+        
+
+       <ion-button color="success">Success</ion-button>
+      
+          </ion-item>
+  </ion-list>
+
+</ion-content>

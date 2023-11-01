@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/home" color="secondary"></ion-back-button>
+    <ion-title><center> Celespeed </center></ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+
+
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="12" class="ion-text-center ion-margin-bottom">
+            <ion-img src="./assets/im.jfif" class="ion-align-self-end"></ion-img>
+
+            <ion-card-subtitle>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star" color="warning"></ion-icon>
+              <ion-icon name="star-outline" color="warning"></ion-icon>
+
+            </ion-card-subtitle>
+          </ion-col>
+
+        </ion-row>
+      </ion-card-content>
+
+
+
+
+
+
+  </div>
+  <form [formGroup]="directionForm" (ngSubmit)="calculateAndDisplayRoute(directionForm.value)">
+    <ion-item>
+      <h6>Pickup Location</h6>
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label position="floating"></ion-label>
+      <ion-input formControlName="source"></ion-input>
+    </ion-item>
+
+    <br>
+    <ion-item>
+
+  <h6>Drop Location</h6>
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label position="floating"></ion-label>
+      <ion-input formControlName="destination"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="directionForm.invalid"></ion-button>
+  </form>  <div #mapElement class="map"></div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</ion-content>
+
+
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" color="success">
+      <ion-tab-button tab="tab1"  routerLink="/vehicle" >
+        <ion-label>Truck Price</ion-label>
+        <ion-icon name="flower-outline"></ion-icon>
+
+      </ion-tab-button>
+      <ion-tab-button tab="tab2"routerLink="/create">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Booking</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab4" routerLink="/search">
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-label>Booking Trip</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+
+

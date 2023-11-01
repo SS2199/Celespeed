@@ -1,0 +1,8 @@
+{
+  "name": "celespeed",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
