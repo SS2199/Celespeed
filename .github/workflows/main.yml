@@ -1,0 +1,46 @@
+name: Build and Deploy Ionic App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install Dependencies
+      run: npm install
+     
+
+    - name: Build Ionic App
+      run: npm run build
+     
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Build Docker Image
+      run: |
+        docker build -t sindhusambasivam/hello_world:${{ github.run_number }} .
+
+    - name: Log in to Docker Hub
+      run: |
+        docker login -u sindhusambasivam -p sindhu21*
+
+    - name: Push Docker Image
+      run: |
+        docker push sindhusambasivam/hello_world:${{ github.run_number }}
+
+    - name: Run Docker Container
+      run: |
+        docker run -d -p 8000:8000 sindhusambasivam/hello_world:${{ github.run_number }}
